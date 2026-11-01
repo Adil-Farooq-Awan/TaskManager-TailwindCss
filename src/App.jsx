@@ -1,11 +1,12 @@
+import Home from "./pages/Home"
 
 function App() {
 
   return (
-    <>
-    <h2 className="bg-blue-300 rounded">Testing</h2>
-    </>
-  )
+   <>
+    <Home />
+   </>
+  );
 }
 
-export default App
+export default App;

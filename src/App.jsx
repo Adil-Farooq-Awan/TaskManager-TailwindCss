@@ -1,12 +1,13 @@
-import Home from "./pages/Home"
+import BasicInput from "./pages/BasicInput";
+import FormInput from "./pages/FormInput";
+import MultipleInput from "./pages/MultipleInputWMap";
+import TodoApp from "./components/TodoApp";
 
-function App() {
+const App = () => {
 
   return (
    <>
-    <Home />
+   <TodoApp />  
    </>
   );
-}
-
-export default App;
+}; export default App;

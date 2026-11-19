@@ -2,7 +2,7 @@ import Todo from './Todo';
 
 const TodoList = ({ todo, delTodo }) => {
  return(
-  <ul>
+  <ul className = "bg-gray-200 rounded w-content">
     {todo.length > 0 ? (
       todo.map((item) => (
      <Todo key={item.id} todo={item} delTodo={delTodo} /> ))) : 

@@ -1,5 +1,5 @@
 const Todo = ({ todo, delTodo }) => {
-  
+
   return (
     <>
     <li className="inline-block p-4 border border-gray-300 rounded mt-2 w-auto">  

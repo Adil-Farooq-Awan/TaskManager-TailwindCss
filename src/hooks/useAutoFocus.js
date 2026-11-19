@@ -1,6 +1,6 @@
 import {useRef, useEffect} from "react";
 
-export default function useMyRef(initialValue = null){
+export default function useAutoFocus(initialValue = null){
     const inputRef = useRef(initialValue);
 
     useEffect(()=> {

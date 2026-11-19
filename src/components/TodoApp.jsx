@@ -1,4 +1,4 @@
-import {useLocalStorage} from "../hooks/useLocalStorage";
+import useLocalStorage from "../hooks/useLocalStorage";
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
 
@@ -15,8 +15,8 @@ const TodoApp = () => {
 
   return (
     <div className="p-2">
-      <TodoForm addTodo={addTodo} />
-      <TodoList todo={todo} delTodo={delTodo} />
+       <TodoForm addTodo={addTodo} />
+       <TodoList todo={todo} delTodo={delTodo} />
     </div>
   );
 };

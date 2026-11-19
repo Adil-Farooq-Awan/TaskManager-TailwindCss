@@ -1,6 +1,6 @@
 import Todo from './Todo';
 
-const TodoList = ({todo, delTodo }) => {
+const TodoList = ({ todo, delTodo }) => {
  return(
   <ul>
     {todo.length > 0 ? (

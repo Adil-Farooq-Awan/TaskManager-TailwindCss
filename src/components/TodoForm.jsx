@@ -1,12 +1,9 @@
 import useMyState from "../hooks/useMyState";
-import useMyRef from "../hooks/useAutoFocus";
+import useAutoFocus from "../hooks/useAutoFocus";
 
-const TodoForm = ({ addTodo }) => {
+const TodoForm = ({addTodo}) => {
   const [text, setText] = useMyState("");
-  const inputRef = useMyRef(0);
-  console.log(inputRef.current);
-  console.log(inputRef);
-
+  const inputRef = useAutoFocus(0);
 
   const handleSubmit = (e) => {
     e.preventDefault();

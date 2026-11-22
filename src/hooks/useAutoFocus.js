@@ -1,3 +1,7 @@
+/*useMyRef
+is specific to TodoForm
+it calls.focus() at start
+*/
 import {useRef, useEffect} from "react";
 
 export default function useAutoFocus(initialValue = null){

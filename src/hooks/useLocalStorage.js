@@ -1,3 +1,5 @@
+/* logic for local storage is all here */
+
 import {useState,useEffect} from 'react';
 
 function useLocalStorage(key, initialValue){

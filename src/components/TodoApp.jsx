@@ -13,7 +13,7 @@ const TodoApp = () => {
 
   //filter state
   const [filter, setFilter] = useMyState("all");
-  const [search, setSearch] = useMyState("");
+  const [search, setSearch] = useMyState("search");
 
   let message = "";
 
@@ -59,7 +59,19 @@ const TodoApp = () => {
   );
   }
 
-  //search
+  //Filter & Search
+  /* const filteredTodo = todo.filter((task) => {
+    const matchesFilter =     
+    filter === "all" ||
+    (filter === "completed" && todo.completed) ||
+    (filter === "active" && !todo.completed);
+
+      const matchesSearch =
+    todo.text.toLowerCase().includes(search.toLowerCase());
+
+    return matchesFilter && matchesSearch;
+
+  });*/
 
 
   //set message

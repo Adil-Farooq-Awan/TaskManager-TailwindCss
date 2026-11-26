@@ -5,7 +5,7 @@ const Todo = ({ todo, delTodo, editingId, editText, setEditText, startEdit, save
   
   return (
     <>
-    <li className="inline-block p-1 border rounded mt-2">
+    <li className="flex justify-between w-sm p-1 bg-gray-100 rounded-xl mt-2">
     {editingId === todo.id ? (
       <input
         value={editText}
@@ -22,7 +22,7 @@ const Todo = ({ todo, delTodo, editingId, editText, setEditText, startEdit, save
         />
       ) : (
        
-      <p className="overflow-hidden p-1 text-lg semi-bold inline"
+      <p className="p-1 text-lg semi-bold inline"
           disabled={editingId}
           onClick={()=>toggleTodo(todo.id)}
           style={{
@@ -33,6 +33,7 @@ const Todo = ({ todo, delTodo, editingId, editText, setEditText, startEdit, save
       
       )}
 
+      <div>
       {
         editingId === todo.id ? (
         <button 
@@ -67,6 +68,7 @@ const Todo = ({ todo, delTodo, editingId, editText, setEditText, startEdit, save
         className="disabled:bg-red-300 bg-red-500 text-white rounded-xl p-1 ml-0.5 cursor-pointer" 
         disabled={editingId}>🗑️
       </button>
+      </div>
       
     </li>
     </>

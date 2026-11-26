@@ -1,9 +1,11 @@
 import useMyState from "../hooks/useMyState";
 import useAutoFocus from "../hooks/useAutoFocus";
+import Filter from "./Filter";
 
 const TodoForm = ({addTodo, search, setSearch}) => {
   const [text, setText] = useMyState("");
   const inputRef = useAutoFocus(null);
+  const [isClicked, setIsClicked] = useMyState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,39 +21,48 @@ const TodoForm = ({addTodo, search, setSearch}) => {
   return(
     <>
      <h1 className="rounded bg-blue-500 text-white text-lg font-semibold text-center p-4">Todo List</h1>   
-    <div>
+    <div className="flex justify-between items-start w-full mt-2">
     {/** Section 01  */}
-    <form onSubmit={handleSubmit} className="inline">
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
         value={text}
         onChange={handleChange}
         ref={inputRef}
         placeholder="Add a new todo..."
-        className="focus:outline-blue-500 border border-blue-500 rounded p-2 mt-4 "
+        className="focus:outline-blue-500 border border-blue-500 p-2 
+         "
       />
-      <button className="disabled:bg-gray-300 disabled:text-gray-500 font-semibold bg-blue-500 text-white rounded p-2 mt-4 ml-0.5"
+      <button className="disabled:bg-gray-300 disabled:text-gray-500 disabled:hover:bg-red-500 hover:bg-blue-200 hover:text-white rounded-xl p-2 rounded border border-blue-500 text-lg font-semibold ml-0.5"
         disabled={!text}>Add Todo
       </button>  
     </form>
 
     {/** Section 02  */}
-    <div className="inline">
-      <button className="ml-30 font-semibold bg-blue-500 text-white rounded p-2 mt-4">Filter</button>
+    <div>
+      <button
+        className="hover:bg-blue-200 hover:text-white rounded-xl p-2 rounded border border-blue-500 text-lg font-semibold"
+        onClick={()=>setIsClicked(!isClicked)}>
+        Filter
+      </button>
+      {isClicked && <Filter />}
     </div>
 
     {/** Section 03  */}
-    <div className="rounded-xl ml-100 inline border border-blue-500 rounded p-3 mt-4">
-      <label>🔍</label>
-      <input
-        type="text"
-        placeholder="Search..."
-        vlaue={search}
-        onChange={(e)=>setSearch(e.target.value)} 
-        className="outline-none ml-0.5 font-semibold text-gray-900 rounded p-2 mt-4"
-      />
-    </div>
-      <button className="rounded-xl ml-0.5 p-2 rounded border border-blue-500 text-lg font-semibold">Search</button>
+    <div className="flex justify-between items-start gap-0.5">
+      <div className="rounded-xl border border-blue-500 rounded p-2">
+        <label>🔍</label>
+        <input
+          type="text"
+          role="text-box"
+          placeholder="Search..."
+          vlaue={search}
+          onChange={(e)=>setSearch(e.target.value)} 
+          className="outline-none font-semibold text-gray-900 rounded"
+        />
+      </div>
+      <button className="hover:bg-blue-200 hover:text-white rounded-xl p-2 rounded border border-blue-500 text-lg font-semibold">Search</button>
+      </div>
     </div>
     </>
   );

@@ -3,7 +3,7 @@ import Todo from './Todo';
 const TodoList = ({ todo, delTodo, message, editingId, setEditingId, editText, setEditText, startEdit, saveEdit, cancelEdit, toggleTodo }) => {
  return(
   <>
-  <ul className = "bg-gray-200 rounded w-content">
+  <ul className = "flex flex-col items-start w-sm bg-gray-200 rounded">
     {
     todo.length > 0 ? (
 
